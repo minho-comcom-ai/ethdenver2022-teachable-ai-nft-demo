@@ -161,7 +161,7 @@ const AINFTModelTrained = ({
   const appCompleted = async (nickname) => {
     // FIXME(hyeonwoong): network parameter will be fixed like devnet, stagingnet, testnet...
     const res = await fetch(
-      `/api/v2/transaction/app-status?appName=${nickname}&network=mainnet`,
+      `/ainize-api/v2/transaction/app-status?appName=${nickname}&network=mainnet`,
     )
       .then((res) => res.json())
       .catch((err) => {
