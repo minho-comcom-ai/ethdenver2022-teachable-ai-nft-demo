@@ -531,11 +531,11 @@ const TeachableNftPage = () => {
         .mint(nft.asset_contract.address, nft.token_id)
         .send({ from: window.ethereum.selectedAddress })
         .once('transactionHash', (txHash) => {
-          GPT2FirebaseManager.setErc721TxHash(txHash, nickname);
+          GPT2FirebaseManager.setHrc721TxHash(txHash, nickname);
           handleTxInfo(txHash);
         })
         .catch((e) => {
-          console.log(`Error minting erc721: ${e}`);
+          console.log(`Error minting hrc721: ${e}`);
         });
     }
   };
