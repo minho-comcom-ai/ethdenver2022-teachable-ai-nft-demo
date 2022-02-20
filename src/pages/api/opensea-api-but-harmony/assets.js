@@ -35,6 +35,14 @@ const getUserERC721Assets = (socket, owner) => {
   });
 }
 
+const malformedURL = (image_url) => {
+  if (!image_url) return;
+  if (image_url.startsWith('http')) return image_url;
+  if (image_url.startsWith('data')) return image_url;
+  if (image_url.search('//') > -1) return image_url;
+  return `https://gateway.pinata.cloud/ipfs/${image_url}`;
+};
+
 const openseaResponseFormat = (assets) => {
   return Promise.all(assets.map(async (asset) => {
     if (asset.needUpdate || !asset.tokenURI) {
@@ -45,7 +53,7 @@ const openseaResponseFormat = (assets) => {
           address: asset.tokenAddress,
         },
         token_id: asset.tokenID,
-        image_url: tokenMetadata?.image,
+        image_url: malformedURL(tokenMetadata?.image),
         description: tokenMetadata?.description,
         name: tokenMetadata?.name,
       };
