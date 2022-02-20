@@ -1,14 +1,9 @@
 let OPENSEA_API_BASE_URL;
 
 switch (process.env.CLIENT_ENV) {
+  default:
   case 'development':
-    OPENSEA_API_BASE_URL = 'https://testnets-api.opensea.io/api/v1';
-    break;
-  case 'staging':
-    OPENSEA_API_BASE_URL = 'https://testnets-api.opensea.io/api/v1';
-    break;
-  case 'production':
-    OPENSEA_API_BASE_URL = 'https://api.opensea.io/api/v1';
+    OPENSEA_API_BASE_URL = '/api/opensea-api-but-harmony';
     break;
 }
 
