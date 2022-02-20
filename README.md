@@ -25,3 +25,7 @@ GPT2_FIREBASE_MEASUREMENT_ID=G-MVG9QTFBG8
 npm install
 npm run dev
 ```
+
+## Smart Contract (HRC721)
+
+- [https://github.com/ainize-team/ainft-smart-contract](https://github.com/ainize-team/ainft-smart-contract)
