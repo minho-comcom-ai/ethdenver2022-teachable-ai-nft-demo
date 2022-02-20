@@ -525,7 +525,7 @@ const TeachableNftPage = () => {
         AINFT.abi,
         process.env.CLIENT_ENV === 'production'
           ? '0xDFcEf37A85997dfFEec31052CD537036EF657285'
-          : '0xc1b1C923FD190BFD98C4B9333a06F9533230C451',
+          : '0xb9a0eb7877491e1ed7cc95245340da430a39cfad', // AI NFT on Harmony
       );
       contract.methods
         .mint(nft.asset_contract.address, nft.token_id)
