@@ -199,6 +199,9 @@ const NFTDialog = ({ open, onClose, handleNFTInfo, currentSelectedNft }) => {
               <></>
             )}
           </NFTContainer>
+          { address && (
+            <Text size="4">NFT requires several minutes to reflect. <br></br>(Check <a href={`https://explorer.pops.one/address/${address}`} target="_blank">the explorer</a>, then reload this page.)</Text>
+          )}
         </Content>
         <ButtonContainer>
           <Button
