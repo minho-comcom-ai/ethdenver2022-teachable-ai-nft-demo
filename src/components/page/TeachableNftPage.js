@@ -725,6 +725,7 @@ const TeachableNftPage = () => {
         <ArrowRight
           style={{ marginTop: '90px' }}
           src={'/images/arrow-right.png'}
+          srcSet={`/images/arrow-right@2x.png 2x,/images/arrow-right@3x.png 3x`}
         />
         <CardBoardNft
           title="Training"
@@ -741,6 +742,7 @@ const TeachableNftPage = () => {
         <ArrowRight
           style={{ marginTop: '90px' }}
           src={'/images/arrow-right.png'}
+          srcSet={`/images/arrow-right@2x.png 2x,/images/arrow-right@3x.png 3x`}
         />
         <CardBoardNft
           title="Model"
