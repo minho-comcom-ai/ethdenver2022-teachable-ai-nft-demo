@@ -407,6 +407,12 @@ const TeachableNftPage = () => {
     }));
   };
 
+  const handleAinftImgInfo = (ainftImageUrl) => {
+    setInitData((prev) => {
+      return Object.assign({ ...prev }, { nft: { ainftImageUrl } });
+    });
+  }
+
   const handleJobType = (value) => {
     setCurrentJobType(value);
   };
@@ -644,6 +650,7 @@ const TeachableNftPage = () => {
 
           router.replace(`/teachable-nft/${nickname}`);
           setStatus('trained');
+          handleAinftImgInfo(url);
         },
         false,
       );
