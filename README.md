@@ -2,7 +2,6 @@
 
 [https://ethdenver2022-teachable-ai-nft-demo.vercel.app/](https://ethdenver2022-teachable-ai-nft-demo.vercel.app/)
 
-(This is the forked version of [Ainize.ai/Teachable-NFT](https://ainize.ai/teachable-nft) for Harmony Testnet.)
 This demo will show you the showcase of converting the simple-boring-image-only NFT to the interactable AI NFT.
 In this scenario, we implemented the chatbot for AI NFT. So you can chat with your NFT and feel a sense of intimacy and freshness.
 For shaping the AI NFT's character, you should build the text script first.
