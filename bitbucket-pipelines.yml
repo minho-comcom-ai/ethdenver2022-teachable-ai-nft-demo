@@ -1,0 +1,48 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:12.19.0
+definitions:
+  steps:
+    - step: &build
+        name: Build
+        script:
+          - npm install
+          # - npm run build  # TODO
+        caches:
+          - node
+pipelines:
+  branches:
+    feature/single-page-create-workspace:
+      - step: *build
+      - step:
+          deployment: preview
+          script:
+            - git push --force https://ainize-bot:$AINIZE_BOT_ACCESS_KEY@github.com/ainize-bot/ainize-web-next.git
+    develop:
+      - step: *build
+      - step:
+          deployment: dev
+          script:
+            - git filter-branch -- --all
+            - git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:master
+            - git push --force https://ainize-bot:$AINIZE_BOT_ACCESS_KEY@github.com/ainize-bot/ainize-web-next.git
+    release/*:
+      - step: *build
+      - step:
+          deployment: staging
+          trigger: manual
+          script:
+            - git filter-branch -- --all
+            - git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:master
+            - git push --force https://ainize-bot:$AINIZE_BOT_ACCESS_KEY@github.com/ainize-bot/ainize-web-next.git
+    master:
+      - step: *build
+      - step:
+          deployment: prod
+          trigger: manual
+          script:
+            - git filter-branch -- --all
+            - git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:master
+            - git push --force https://ainize-bot:$AINIZE_BOT_ACCESS_KEY@github.com/ainize-bot/ainize-web-next.git

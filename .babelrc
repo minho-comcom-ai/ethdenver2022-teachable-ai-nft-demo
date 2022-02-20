@@ -1,0 +1,32 @@
+{
+    "presets": ["next/babel", "@babel/preset-env", "@babel/preset-react"],
+    "plugins": [
+        ["babel-plugin-root-import"],
+        [
+            "styled-components",
+            {
+                "ssr": true,
+                "displayName": true,
+                "preprocess": false
+            }
+        ],
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "babel-plugin-transform-imports",
+            {
+                "@material-ui/core": {
+                    "transform": "@material-ui/core/esm/${member}",
+                    "preventFullImport": true
+                },
+                "@material-ui/icons": {
+                    "transform": "@material-ui/icons/esm/${member}",
+                    "preventFullImport": true
+                }
+            }
+        ]
+    ]
+}
