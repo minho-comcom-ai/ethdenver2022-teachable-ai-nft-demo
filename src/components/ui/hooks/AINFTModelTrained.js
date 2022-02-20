@@ -221,7 +221,7 @@ const AINFTModelTrained = ({
           }
           type="secondary"
         >
-          Mint on Ethereum
+          Mint on Harmony
         </Button>
       </ButtonContainer>
     </Trained>
@@ -266,13 +266,9 @@ const AINFTModelTrained = ({
             on{' '}
             <a
               target="_blank"
-              href={`https://${
-                process.env.CLIENT_ENV !== 'production'
-                  ? 'rinkeby.etherscan.io'
-                  : 'etherscan.io'
-              }/tx/${mint?.txHash}`}
+              href={`https://explorer.pops.one/tx/${mint?.txHash}`}
             >
-              etherscan.io
+              explorer.pops.one
             </a>
           </MintText>
         </MintInfo>
