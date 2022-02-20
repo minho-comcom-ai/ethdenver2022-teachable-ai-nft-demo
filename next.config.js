@@ -30,7 +30,7 @@ module.exports = {
         destination: `/teachable-nft`,
       },
       {
-        source: '/api/:path*',
+        source: '/ainize-api/:path*',
         destination: `${process.env.AINIZE_API_SERVER_URL || 'https://api.dev.ainize.ai'}/:path*`,
       },
     ];
