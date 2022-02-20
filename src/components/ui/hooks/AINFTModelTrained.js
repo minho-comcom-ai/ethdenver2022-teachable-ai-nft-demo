@@ -42,7 +42,7 @@ const Trained = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 `;
 
 const Info = styled.div`
