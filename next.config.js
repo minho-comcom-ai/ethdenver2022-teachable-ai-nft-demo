@@ -30,7 +30,7 @@ module.exports = {
         destination: `/teachable-nft`,
       },
       {
-        source: '/api/:path*',
+        source: '/ainize-api/:path*',
         destination: `${process.env.AINIZE_API_SERVER_URL || 'https://api.dev.ainize.ai'}/:path*`,
       },
     ];
@@ -52,8 +52,8 @@ module.exports = {
     AIN_BLOCKCHAIN_PROVIDER: process.env.AIN_BLOCKCHAIN_PROVIDER || 'https://dev-api.ainetwork.ai',
     AIN_BLOCKCHAIN_INSIGHT: process.env.AIN_BLOCKCHAIN_INSIGHT || 'https://ain-sight-dev.herokuapp.com',
     // MOCK Login
-    AINIZE_USER_ID: process.env.AINIZE_USER_ID || 'gXYugZWVqXcJmnwewllkVkhQRPL2',
-    AINIZE_USER_EMAIL: process.env.AINIZE_USER_EMAIL || 'minho.comcom.ai@gmail.com',
+    AINIZE_USER_ID: process.env.AINIZE_USER_ID || 'etK4neQ9YjX03fJ4nnzJDtGat3f1',
+    AINIZE_USER_EMAIL: process.env.AINIZE_USER_EMAIL || 'minho4yang@gmail.com',
     AIN_ACCOUNT_ADDRESS: process.env.AIN_ACCOUNT_ADDRESS,
     AIN_PRIVATE_UNSAFE_KEY: process.env.AIN_PRIVATE_UNSAFE_KEY,
   },

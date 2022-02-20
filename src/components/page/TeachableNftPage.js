@@ -525,17 +525,17 @@ const TeachableNftPage = () => {
         AINFT.abi,
         process.env.CLIENT_ENV === 'production'
           ? '0xDFcEf37A85997dfFEec31052CD537036EF657285'
-          : '0xc1b1C923FD190BFD98C4B9333a06F9533230C451',
+          : '0xb9a0eb7877491e1ed7cc95245340da430a39cfad', // AI NFT on Harmony
       );
       contract.methods
         .mint(nft.asset_contract.address, nft.token_id)
         .send({ from: window.ethereum.selectedAddress })
         .once('transactionHash', (txHash) => {
-          GPT2FirebaseManager.setErc721TxHash(txHash, nickname);
+          GPT2FirebaseManager.setHrc721TxHash(txHash, nickname);
           handleTxInfo(txHash);
         })
         .catch((e) => {
-          console.log(`Error minting erc721: ${e}`);
+          console.log(`Error minting hrc721: ${e}`);
         });
     }
   };
@@ -725,6 +725,7 @@ const TeachableNftPage = () => {
         <ArrowRight
           style={{ marginTop: '90px' }}
           src={'/images/arrow-right.png'}
+          srcSet={`/images/arrow-right@2x.png 2x,/images/arrow-right@3x.png 3x`}
         />
         <CardBoardNft
           title="Training"
@@ -741,6 +742,7 @@ const TeachableNftPage = () => {
         <ArrowRight
           style={{ marginTop: '90px' }}
           src={'/images/arrow-right.png'}
+          srcSet={`/images/arrow-right@2x.png 2x,/images/arrow-right@3x.png 3x`}
         />
         <CardBoardNft
           title="Model"

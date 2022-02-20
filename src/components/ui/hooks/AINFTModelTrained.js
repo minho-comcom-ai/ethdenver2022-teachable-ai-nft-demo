@@ -42,7 +42,7 @@ const Trained = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 `;
 
 const Info = styled.div`
@@ -161,7 +161,7 @@ const AINFTModelTrained = ({
   const appCompleted = async (nickname) => {
     // FIXME(hyeonwoong): network parameter will be fixed like devnet, stagingnet, testnet...
     const res = await fetch(
-      `/api/v2/transaction/app-status?appName=${nickname}&network=mainnet`,
+      `/ainize-api/v2/transaction/app-status?appName=${nickname}&network=mainnet`,
     )
       .then((res) => res.json())
       .catch((err) => {
@@ -181,7 +181,7 @@ const AINFTModelTrained = ({
           Your AINFT is ready
         </Text>
         <NFTInfo>
-          <img src={nft?.image_url} width={60} height={60} />
+          <img src={nft?.ainftImageUrl} width={60} height={60} />
         </NFTInfo>
         <MintInfo>
           <MintText size="p">
@@ -221,7 +221,7 @@ const AINFTModelTrained = ({
           }
           type="secondary"
         >
-          Mint on Ethereum
+          Mint on Harmony
         </Button>
       </ButtonContainer>
     </Trained>
@@ -234,7 +234,7 @@ const AINFTModelTrained = ({
           Your AINFT is ready
         </Text>
         <MintedNFTInfo>
-          <img src={nft?.image_url} width={60} height={60} />
+          <img src={nft?.ainftImageUrl} width={60} height={60} />
           <DemoSection>
             <Text size="basic" color="2" weight="bold">
               {nickname}
@@ -266,13 +266,9 @@ const AINFTModelTrained = ({
             on{' '}
             <a
               target="_blank"
-              href={`https://${
-                process.env.CLIENT_ENV !== 'production'
-                  ? 'rinkeby.etherscan.io'
-                  : 'etherscan.io'
-              }/tx/${mint?.txHash}`}
+              href={`https://explorer.pops.one/tx/${mint?.txHash}`}
             >
-              etherscan.io
+              explorer.pops.one
             </a>
           </MintText>
         </MintInfo>

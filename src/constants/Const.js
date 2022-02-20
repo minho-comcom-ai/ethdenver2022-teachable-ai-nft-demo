@@ -24,7 +24,7 @@ const Const = {
       case 'development':
       case 'staging':
       default:
-        return 4; // rinkeby
+        return 1666700000; // Harmony testnet
     }
   },
 
@@ -32,6 +32,7 @@ const Const = {
   ETH_CHAIN_NAME: {
     1: 'Ethereum Mainnet',
     4: 'Rinkeby Test Network',
+    1666700000: 'Harmony testnet',
   }
 };
 
