@@ -321,7 +321,7 @@ const TeachableNftPage = () => {
       setStatus('signing');
       return;
     }
-    if (!router.query.trainId && status !== 'training') {
+    if (!router.query.trainId && status !== 'training' && status !== 'trained') {
       if (nft && file && nickname) {
         setStatus('request');
         return;
@@ -372,6 +372,12 @@ const TeachableNftPage = () => {
       getInitalInformation();
     }
   }, [router.query.trainId]);
+
+  useEffect(() => {
+    if (status === 'trained' && !router.query.trainId) {
+      router.replace(`/teachable-nft/${nickname}`);
+    }
+  }, [status]);
 
   useEffect(() => {
     setWeb3(new Web3(window.ethereum));
@@ -650,7 +656,6 @@ const TeachableNftPage = () => {
             },
           });
 
-          router.replace(`/teachable-nft/${nickname}`);
           setStatus('trained');
           handleAinftImgInfo(url);
         },
