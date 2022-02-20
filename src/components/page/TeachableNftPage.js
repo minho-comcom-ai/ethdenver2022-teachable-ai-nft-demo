@@ -409,7 +409,9 @@ const TeachableNftPage = () => {
 
   const handleAinftImgInfo = (ainftImageUrl) => {
     setInitData((prev) => {
-      return Object.assign({ ...prev }, { nft: { ainftImageUrl } });
+      const data = { ...prev };
+      data.nft.ainftImageUrl = ainftImageUrl;
+      return data;
     });
   }
 
