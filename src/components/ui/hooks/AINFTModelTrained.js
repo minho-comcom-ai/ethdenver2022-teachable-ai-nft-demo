@@ -42,7 +42,7 @@ const Trained = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 `;
 
 const Info = styled.div`
@@ -181,7 +181,7 @@ const AINFTModelTrained = ({
           Your AINFT is ready
         </Text>
         <NFTInfo>
-          <img src={nft?.image_url} width={60} height={60} />
+          <img src={nft?.ainftImageUrl} width={60} height={60} />
         </NFTInfo>
         <MintInfo>
           <MintText size="p">
@@ -234,7 +234,7 @@ const AINFTModelTrained = ({
           Your AINFT is ready
         </Text>
         <MintedNFTInfo>
-          <img src={nft?.image_url} width={60} height={60} />
+          <img src={nft?.ainftImageUrl} width={60} height={60} />
           <DemoSection>
             <Text size="basic" color="2" weight="bold">
               {nickname}
